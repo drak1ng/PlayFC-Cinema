@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
-	id        = "felippegallo.com.br.sygo"
+	id        = "br.com.webside.platfccinema"
 	versionCode="10" 
 	version   = "1.0.0">
 	<name>PlayFC Cinema</name>
@@ -90,12 +90,6 @@
 
 <!--Upload de arquivos -->
 <gap:plugin name="org.apache.cordova.file-transfer" />
-
-<!-- Facebook Login -->
-<gap:plugin name="com.phonegap.plugins.facebookconnect">
-	<param name="APP_ID" value="496715470431107" />
-	<param name="APP_NAME" value="felippegallo.com.br.sygo" />
-</gap:plugin>
 
 <!-- Faz o teclado funcionar igual do iphone -->
 <!--<preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />-->
