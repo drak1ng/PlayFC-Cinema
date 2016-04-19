@@ -55,12 +55,7 @@
 			
 			<script>
 				
-				
-				var request = $.get("http://playfc.projetotemporario.com.br/api_app/cinema_cartaz.php", function(data){ alert('Olá'); $("#id_conteudo_em_cartaz").html(data); });
-				
-				request.error(function(jqXHR, textStatus, errorThrown) {
-					alert('STATUS: '+textStatus+' - ERRO: '+errorThrown);
-				});
+				var request = $.get("http://playfc.projetotemporario.com.br/api_app/cinema_cartaz.php", function(data){ $("#id_conteudo_em_cartaz").html(data); });
 				
 				$("#bt_opcoes_em_cartaz").click(function(){
 					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
