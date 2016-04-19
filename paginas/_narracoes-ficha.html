@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="../css/index.css" />
+        <link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <title>PlayFC</title>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="../js/cordova.js"></script>
+	</head>
+    <body>
+	    <div data-role="page" style="background:#FFF;">
+		    <div class="topo" style="z-index:999;">
+			    <div class="logotipo" id="narracoes_ficha_logotipo"><img src="../img/logo2.png" alt="logo2" height="24" /></div>
+			    <div class="titulo_tela">
+				    <div class='bt_voltar' id='ficha_narracao_voltar'>Voltar</div>
+					<div style='margin:0px 100px;'>NARRAÇÕES</div>
+				</div>
+		    </div>
+
+			<div role="main" class="ui-content">
+				<div id="id_conteudo_narracoes_ficha" style="text-align:center; padding:73px 0px 41px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; margin:0px -16px;">
+					<div style="width:200px; height:66px; margin:120px auto 0px auto; text-align:center; font-size:13px; color:#999; background:#FFF; padding-top:30px; border-radius:10px;">
+						<img src="../img/loading.gif" width="110" height="10" /><br><br>
+						Aguarde carregando...
+					</div>
+				</div>
+			</div>
+			
+			<div class="botoes-rodape">
+				<div class="botao" id="bt_narracoes_ficha_narracoes" style="background-image:url(../img/icon_002.png);">Narrações</div>
+				<div class="botao" id="bt_narracoes_ficha_enviar" style="background:url(../img/icon_000.png) center 10px no-repeat #000; background-size:40px; padding-top:46px; color:#FFF; margin:-14px 0px -2px 0px; height:40px; border-radius:10px 10px 0px 0px; width:34%; -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.4); box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);">Enviar Narração</div>
+				<div class="botao" id="bt_narracoes_ficha_configuracao" style="background-image:url(../img/icon_004.png);">Meu Cadastro</div>
+			</div>
+		
+			
+			<script>
+				
+				var cache_id_narracao = window.localStorage.getItem('cache_id_narracao');
+				
+				$.get("http://playfc.projetotemporario.com.br/api_app/narracoes-ficha.php", { id:cache_id_narracao }, function(data){ $("#id_conteudo_narracoes_ficha").html(data); });
+				
+				$("#ficha_narracao_voltar").click(function(){
+					var narracao_voltar = window.localStorage.getItem('narracao_voltar');
+					
+					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
+					$.mobile.changePage(narracao_voltar, { transition: "fade", changeHash: false });
+				});
+				
+				$("#bt_narracoes_ficha_narracoes").click(function(){
+					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
+					$.mobile.changePage("narracoes.html", { transition: "fade", changeHash: false });
+				});
+				
+				$("#bt_narracoes_ficha_enviar").click(function(){
+					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
+					$.mobile.changePage("enviar.html", { transition: "fade", changeHash: false });
+				});
+				
+				$("#bt_narracoes_ficha_configuracao").click(function(){
+					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
+					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
+				});
+				
+			</script>
+		
+		</div>
+    </body>
+</html>
