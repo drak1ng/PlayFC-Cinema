@@ -6,10 +6,10 @@
         id        = "com.loiane.phonegap"
         version   = "1.0.0">
 
-    <name>PlayFC</name>
+    <name>PlayFC Cinema</name>
 
     <description>
-       PlayFC
+       PlayFC Cinema
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
