@@ -47,8 +47,8 @@
 				</div>
 		    </div>
 
-			<div role="main" class="ui-content">
-				<div id="id_conteudo_meus_dados" style="text-align:center; padding:73px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; margin:0px -16px;">
+			<div role="main" class="ui-content" style="padding-bottom:0px !important;">
+				<div id="id_conteudo_meus_ingressos" style="text-align:center; padding:73px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; margin:0px -16px;">
 					<div style="width:200px; height:66px; margin:120px auto 0px auto; text-align:center; font-size:13px; color:#999; background:#FFF; padding-top:30px; border-radius:10px;">
 						<img src="../img/loading.gif" width="110" height="10" /><br><br>
 						Aguarde carregando...
@@ -65,11 +65,11 @@
 				
 				if(app_id=="" || app_id==null){
 					$('div[data-role=page]').css('background-color','#FFF');
-					$('#id_conteudo_meus_dados').css('padding','80px 0px 50px 0px');
-					$('#id_conteudo_meus_dados').css('margin','0px');
-					$.get("http://playfc.projetotemporario.com.br/api_app/entrar.php", function(data){ $("#id_conteudo_meus_dados").html(data); });
+					$('#id_conteudo_meus_ingressos').css('padding','80px 0px 50px 0px');
+					$('#id_conteudo_meus_ingressos').css('margin','0px');
+					$.get("http://playfc.projetotemporario.com.br/api_app/entrar.php", function(data){ $("#id_conteudo_meus_ingressos").html(data); });
 				}else{
-					$.get("http://playfc.projetotemporario.com.br/api_app/narracoes.php", { opt:"minhas-narracoes", busca:app_id }, function(data){ $("#id_conteudo_meus_dados").html(data); });
+					$.get("http://playfc.projetotemporario.com.br/api_app/configuracao_meus_ingressos.php", { opt:"minhas-narracoes", busca:app_id }, function(data){ $("#id_conteudo_meus_ingressos").html(data); });
 				}
 			
 				$("#ficha_minhas_narracoes_voltar").click(function(){
