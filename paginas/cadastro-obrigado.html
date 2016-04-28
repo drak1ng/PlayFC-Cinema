@@ -57,14 +57,8 @@
 				$('#id_conteudo_cadastro_sucesso').html(x);
 				
 				$("#bt_sucesso").click(function(){
-					var voltar_cadastro = window.localStorage.getItem('voltar_cadastro');
-					if(voltar_cadastro=='sim'){
-						$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
-						$.mobile.changePage("enviar_03.html", { transition: "fade", changeHash: false });
-					}else{
-						$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
-						$.mobile.changePage("enviar.html", { transition: "fade", changeHash: false });
-					}
+					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
+					$.mobile.changePage("comprar_ingresso.html", { transition: "fade", changeHash: false });
 				});
 				
 				$("#bt_opcoes_meus_dados3").click(function(){
