@@ -70,14 +70,12 @@
 	<param name="ios-package" value="CDVStatusBar" onload="true" />
 </feature>
 <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0">
+	<preference name="StatusBarStyle" value="blackopaque" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<preference name="StatusBarBackgroundColor" value="#000000"/>
 </gap:plugin>
 <preference name="webviewbounce" value="false" />
 <preference name="DisallowOverscroll" value="true" />
-
-<!--In App Browser-->
-<!--<gap:plugin name="org.li8.inappbrowser" version="0.1" />-->
 
 <!--Geolocation-->
 <feature name="Geolocation">
@@ -85,16 +83,33 @@
 </feature>
 <gap:plugin name="org.apache.cordova.geolocation" />
 
+<!--Speech-->
+<plugin name="com.aserputko.speech.speechrecognition2" spec="0.1.1" source="pgb" />
+
+<!--In App Browser-->
+<gap:plugin name="org.li8.inappbrowser" version="0.1" />
+
 <!--Camera-->
 <gap:plugin name="org.apache.cordova.camera" />
 
 <!--Upload de arquivos -->
 <gap:plugin name="org.apache.cordova.file-transfer" />
 
-<!-- Faz o teclado funcionar igual do iphone -->
-<!--<preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />-->
+
+<gap:plugin name="org.apache.cordova.dialogs" />
+
+<!-- Device -->
+<gap:plugin name="org.apache.cordova.device" />
+
+<!-- ANALYTICS -->
+<gap:plugin name="com.danielcwilson.plugins.googleanalytics" version="0.6.1" />
+
+<!-- Teclado sobrepondo para o android, igual iphone -->
+<!--<preference name="android-windowSoftInputMode" value="adjustPan" />-->
 
 <!-- Custom Preferences-->
+<!--<preference name="phonegap-version" value="3.7.0" />-->          <!-- all: current version of PhoneGap -->
+<!--<preference name="phonegap-version" value="3.5.0" />-->         <!-- all: current version of PhoneGap -->
 <preference name="phonegap-version"           value="3.6.3" />          <!-- all: current version of PhoneGap -->
 <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
@@ -103,6 +118,6 @@
 <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
 <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
-<preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+<preference name="android-minSdkVersion"      value="14" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
 <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 </widget>
