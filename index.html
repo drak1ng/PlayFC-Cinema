@@ -44,11 +44,9 @@
 			<script>
 				
 				document.addEventListener("deviceready", onDeviceReady, true); 
-		        function onDeviceReady() {
-			        document.addEventListener("online", onOnline, false);
-					document.addEventListener("offline", onOffline, false);
-					
-		            setTimeout(carregar, 3000);
+		        function onDeviceReady(){
+			        checkConnection();
+		            //setTimeout(carregar, 3000);
 		        }
 				
 				function carregar(){
@@ -56,14 +54,20 @@
 					$.mobile.changePage("./paginas/em_cartaz.html", { transition: "fade", changeHash: false });					
 				}
 				
-				    function onOnline() {
-						alert('online');
-				    }
-				    function onOffline() {
-						alert('offline');
-				    }
-				
-				
+				function checkConnection() {
+			        var networkState = navigator.network.connection.type;
+			
+			        var states = {};
+			        states[Connection.UNKNOWN]  = 'Unknown connection';
+			        states[Connection.ETHERNET] = 'Ethernet connection';
+			        states[Connection.WIFI]     = 'WiFi connection';
+			        states[Connection.CELL_2G]  = 'Cell 2G connection';
+			        states[Connection.CELL_3G]  = 'Cell 3G connection';
+			        states[Connection.CELL_4G]  = 'Cell 4G connection';
+			        states[Connection.NONE]     = 'No network connection';
+			
+			        alert('Connection type: ' + states[networkState]);
+			    }
 				
 				alert = function (txt) {
 					navigator.notification.alert(txt,null,'AVISO','OK');
