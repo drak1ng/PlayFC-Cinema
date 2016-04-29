@@ -86,12 +86,9 @@
 <!--Speech-->
 <plugin name="com.aserputko.speech.speechrecognition2" spec="0.1.1" source="pgb" />
 
-<feature name="NetworkStatus">
-    <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
-</feature>
-
-<feature name="NetworkStatus">
-    <param name="ios-package" value="CDVConnection" />
+<feature name="Network Information">
+    <param name="id" value="org.apache.cordova.network-information" />
+    <param name="version" value="0.2.10" />
 </feature>
 
 <!--In App Browser-->
