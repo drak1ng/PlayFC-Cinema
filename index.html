@@ -45,6 +45,9 @@
 				
 				document.addEventListener("deviceready", onDeviceReady, true); 
 		        function onDeviceReady() {
+			        document.addEventListener("online", onOnline, false);
+					document.addEventListener("offline", onOffline, false);
+					
 		            setTimeout(carregar, 3000);
 		        }
 				
@@ -52,6 +55,15 @@
 					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("./paginas/em_cartaz.html", { transition: "fade", changeHash: false });					
 				}
+				
+				    function onOnline() {
+						alert('online');
+				    }
+				    function onOffline() {
+						alert('offline');
+				    }
+				
+				
 				
 				alert = function (txt) {
 					navigator.notification.alert(txt,null,'AVISO','OK');
