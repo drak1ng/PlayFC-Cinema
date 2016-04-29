@@ -45,6 +45,8 @@
 		</div>
 			<script>
 				
+				var jaFicouOffline = 0;
+				
 				document.addEventListener("deviceready", onDeviceReady, true);
 				document.addEventListener("online", onOnLine, true);
 				document.addEventListener("offline", onOffLine, true);
@@ -55,11 +57,12 @@
 		        
 		        function onOnLine(){
 		            $('#checarConexao').hide();
-		            carregar();
+		            if(jaFicouOffline==1){ jaFicouOffline=0; carregar(); }
 		        }
 		        
 		        function onOffLine(){
 		            $('#checarConexao').show();
+		            jaFicouOffline = 1;
 		        }
 				
 				function carregar(){
