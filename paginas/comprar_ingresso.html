@@ -62,17 +62,14 @@
 				$.get("http://playfc.projetotemporario.com.br/api_app/cinema_ingresso.php", function(data){ $("#id_conteudo_comprar_ingresso").html(data); });
 				
 				$("#bt_comprar_ingresso").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("comprar_ingresso.html", { transition: "fade", changeHash: false });
 				});
 				
 				$("#bt_opcoes_comprar_ingresso").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				
 				$("#ficha_comprar_imgresso_voltar").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("em_cartaz.html", { transition: "fade", changeHash: false });
 				});
 				

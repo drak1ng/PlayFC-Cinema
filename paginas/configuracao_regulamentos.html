@@ -61,12 +61,10 @@
 				$.get("http://playfc.projetotemporario.com.br/api_app/configuracao_regulamentos_cinema.php", function(data){ $("#id_conteudo_regulamento").html(data); });
 				
 				$("#ficha_narracao_voltar").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				
 				$("#bt_opcoes_regulamento").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				

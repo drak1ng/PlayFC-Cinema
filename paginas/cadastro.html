@@ -59,7 +59,6 @@
 				$.get("http://playfc.projetotemporario.com.br/api_app/cadastro.php", function(data){ $("#id_conteudo_cadastro").html(data); });
 				
 				$("#bt_opcoes_meus_dados2").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				

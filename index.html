@@ -52,12 +52,12 @@
 				document.addEventListener("offline", onOffLine, true);
 				
 		        function onDeviceReady(){
-		            setTimeout(carregar, 3000);
+		            setTimeout(carregar, 500);
 		        }
 		        
 		        function onOnLine(){
 		            $('#checarConexao').hide();
-		            if(jaFicouOffline==1){ jaFicouOffline=0; carregar(); }
+		            if(jaFicouOffline==1){ jaFicouOffline=0; $.mobile.changePage("em_cartaz.html", { transition: "fade", changeHash: false }); }
 		        }
 		        
 		        function onOffLine(){
@@ -66,8 +66,7 @@
 		        }
 				
 				function carregar(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
-					$.mobile.changePage("./paginas/em_cartaz.html", { transition: "fade", changeHash: false });					
+					$.mobile.changePage("./paginas/em_cartaz.html", { transition: "fade", changeHash: false });
 				}
 
 				alert = function (txt) {
