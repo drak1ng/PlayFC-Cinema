@@ -36,8 +36,8 @@
 
 	</head>
     <body>
-	    <div id="checarConexao" style="width:100%; height:100%; position:fixed; top:0px; left:0px; background:#000; color:#FFF; display:none;">SEM CONEXÃO</div>
 	    <div data-role="page" style="background:url(./img/fundo_login.jpg) center center no-repeat #333; background-size:cover;">
+			<div id="checarConexao" style="width:100%; height:100%; position:fixed; top:0px; left:0px; z-index:99999; background:#000; color:#FFF; display:none;">SEM CONEXÃO</div>
 		    <div style="text-align:center; width:100%; height:100%; background-color:rgba(255,255,255,0.8); position:fixed; top:0px; left:0px;">
 			    <br><br><br><br><br>
 			    <img src="img/logo_cinema.png" alt="logo_cinema" width="260px" id="home_entrar" />
@@ -49,7 +49,7 @@
 				document.addEventListener("offline", onOffLine, true);
 				
 		        function onDeviceReady(){
-		            setTimeout(carregar, 3000);
+		           // setTimeout(carregar, 3000);
 		        }
 		        
 		        function onOnLine(){
