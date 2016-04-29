@@ -86,6 +86,12 @@
 <!--Speech-->
 <plugin name="com.aserputko.speech.speechrecognition2" spec="0.1.1" source="pgb" />
 
+<feature name="NetworkStatus">
+    <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+</feature>
+
+<plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
+
 <!--In App Browser-->
 <gap:plugin name="org.li8.inappbrowser" version="0.1" />
 
