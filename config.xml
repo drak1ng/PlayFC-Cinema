@@ -90,8 +90,6 @@
     <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
 </feature>
 
-<plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
-
 <!--In App Browser-->
 <gap:plugin name="org.li8.inappbrowser" version="0.1" />
 
