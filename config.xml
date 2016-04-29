@@ -86,6 +86,9 @@
 <!--Speech-->
 <plugin name="com.aserputko.speech.speechrecognition2" spec="0.1.1" source="pgb" />
 
+<!--Network Information-->
+<gap:plugin name="org.apache.cordova.network-information" />
+
 <!--In App Browser-->
 <gap:plugin name="org.li8.inappbrowser" version="0.1" />
 
