@@ -64,7 +64,7 @@
 				
 				var cache_id_narracao = window.localStorage.getItem('cache_id_narracao');
 				
-				$.get("http://playfc.projetotemporario.com.br/api_app/narracoes-ficha.php", { id:cache_id_narracao }, function(data){ $("#id_conteudo_narracoes_ficha").html(data); });
+				$.get("http://playfcapp.com.br/api_app/narracoes-ficha.php", { id:cache_id_narracao }, function(data){ $("#id_conteudo_narracoes_ficha").html(data); });
 				
 				$("#ficha_narracao_voltar").click(function(){
 					var narracao_voltar = window.localStorage.getItem('narracao_voltar');

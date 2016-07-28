@@ -63,9 +63,9 @@
 				var app_id = window.localStorage.getItem('app_id');
 				
 				if(app_id=="" || app_id==null){
-					$.get("http://playfc.projetotemporario.com.br/api_app/entrar.php", function(data){ $("#id_conteudo_meus_dados").html(data); });
+					$.get("http://playfcapp.com.br/api_app/entrar.php", function(data){ $("#id_conteudo_meus_dados").html(data); });
 				}else{
-					$.get("http://playfc.projetotemporario.com.br/api_app/configuracao_meus_dados.php", { id:app_id }, function(data){ $("#id_conteudo_meus_dados").html(data); });
+					$.get("http://playfcapp.com.br/api_app/configuracao_meus_dados.php", { id:app_id }, function(data){ $("#id_conteudo_meus_dados").html(data); });
 				}
 				
 				$("#ficha_meus_dados_voltar").click(function(){
