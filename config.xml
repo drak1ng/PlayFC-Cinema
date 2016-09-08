@@ -90,7 +90,7 @@
 <gap:plugin name="org.apache.cordova.network-information" />
 
 <!--In App Browser-->
-<gap:plugin name="org.li8.inappbrowser" version="0.1" />
+<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
 
 <!--Camera-->
 <gap:plugin name="org.apache.cordova.camera" />
