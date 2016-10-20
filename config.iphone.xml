@@ -63,17 +63,9 @@
 <!--<feature name="http://api.phonegap.com/1.0/contacts"/>-->
 <!--<feature name="http://api.phonegap.com/1.0/media"/>-->
 
-<plugin name="cordova-plugin-whitelist" version="1" />
 <access origin="*" />
-<allow-navigation href="*" />
-<allow-intent href="*" />
-<platform name="android">
-    <allow-intent href="market:*" />
-</platform>
-<platform name="ios">
-    <allow-intent href="itms:*" />
-    <allow-intent href="itms-apps:*" />
-</platform>
+<access origin="whatsapp:*" launch-external="yes" />
+<allow-intent href="whatsapp:*" />
 
 <!--IOS Status Bar-->
 <feature name="StatusBar">
@@ -93,6 +85,8 @@
 </feature>
 <gap:plugin name="org.apache.cordova.geolocation" />
 
+<plugin name="nl.x-services.plugins.socialsharing" spec="4.3.8" source="pgb" />
+
 <!--Speech-->
 <plugin name="com.aserputko.speech.speechrecognition2" spec="0.1.1" source="pgb" />
 
@@ -100,7 +94,7 @@
 <gap:plugin name="org.apache.cordova.network-information" />
 
 <!--In App Browser-->
-<gap:plugin name="org.apache.cordova.InAppBrowser" />
+<gap:plugin name="org.li8.inappbrowser" version="0.1" />
 
 <!--Camera-->
 <gap:plugin name="org.apache.cordova.camera" />
@@ -123,8 +117,7 @@
 <!-- Custom Preferences-->
 <!--<preference name="phonegap-version" value="3.7.0" />-->          <!-- all: current version of PhoneGap -->
 <!--<preference name="phonegap-version" value="3.5.0" />-->         <!-- all: current version of PhoneGap -->
-<!--<preference name="phonegap-version" value="3.6.3" />-->          <!-- all: current version of PhoneGap -->
-<preference name="phonegap-version"           value="cli-6.3.0" />          <!-- all: current version of PhoneGap -->
+<preference name="phonegap-version"           value="3.6.3" />          <!-- all: current version of PhoneGap -->
 <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device"              value="handset" />      <!-- all: possible values handset, tablet, or universal -->
 <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
