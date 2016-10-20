@@ -64,25 +64,22 @@
 				var app_id = window.localStorage.getItem('app_id');
 				
 				if(app_id=="" || app_id==null){
-					$.get("http://playfc.projetotemporario.com.br/api_app/entrar.php", function(data){ $("#id_conteudo_meus_dados").html(data); });
+					$.get("http://playfcapp.com.br/api_app/entrar.php", function(data){ $("#id_conteudo_meus_dados").html(data); });
 				}else{
 					var ingresso_quantidade = window.localStorage.getItem('ingresso_quantidade');
 					var ingresso_total = window.localStorage.getItem('ingresso_total');
 					
-					$.get("http://playfc.projetotemporario.com.br/api_app/cinema_ingresso_pagamento.php", { id:app_id, quantidade:ingresso_quantidade, total:ingresso_total }, function(data){ $("#id_conteudo_meus_dados").html(data); });
+					$.get("http://playfcapp.com.br/api_app/cinema_ingresso_pagamento.php", { id:app_id, quantidade:ingresso_quantidade, total:ingresso_total }, function(data){ $("#id_conteudo_meus_dados").html(data); });
 				}
 				
 				$("#bt_comprar_ingresso").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("comprar_ingresso.html", { transition: "fade", changeHash: false });
 				});
 				$("#bt_opcoes_comprar_ingresso2").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				
 				$("#ficha_comprar_imgresso2_voltar").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("comprar_ingresso.html", { transition: "fade", changeHash: false });
 				});
 				

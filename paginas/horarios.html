@@ -37,15 +37,15 @@
     <body>
 	    <div data-role="page" style="background:#999;">
 		    <div class="topo" style="z-index:999;">
-			    <div class="logotipo" id="em_cartaz_filme_logotipo">
-				    <div id="bt_opcoes_em_cartaz_filme" style='width:50px; height:38px; float:right; margin:-5px 0px; background:url(../img/icon_preferencias.png) center center no-repeat;'></div>
+			    <div class="logotipo" id="em_cartaz_logotipo">
+				    <div id="bt_opcoes_em_cartaz" style='width:50px; height:38px; float:right; margin:-5px 0px; background:url(../img/icon_preferencias.png) center center no-repeat;'></div>
 				    <div style="margin:0px 50px; text-align:center;"><img src="../img/logo2.png" alt="logo2" height="28" /></div>
 				</div>
 			    <div class="titulo_tela">EM CARTAZ</div>
 		    </div>
 
 			<div role="main" class="ui-content" style="height:100%;">
-				<div id="id_conteudo_em_cartaz_filmes" style="height:100%; text-align:center; padding:73px 0px 41px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; margin:0px -16px;">
+				<div id="id_conteudo_em_cartaz" style="height:100%; text-align:center; padding:73px 0px 41px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; margin:0px -16px;">
 					<div style="width:200px; height:66px; margin:120px auto 0px auto; text-align:center; font-size:13px; color:#999; background:#FFF; padding-top:30px; border-radius:10px;">
 						<img src="../img/loading.gif" width="110" height="10" /><br><br>
 						Aguarde carregando...
@@ -54,18 +54,16 @@
 			</div>
 			
 			<script>
+
+				var id_filme = window.localStorage.getItem('id_filme');
 				
-				$.get("http://playfcapp.com.br/api_app/cinema_cartaz_quantidade.php", function(data){
-					
-					if(data==1){
-						$.mobile.changePage("horarios.html", { transition: "none", changeHash: false });
-					}else{
-						$.get("http://playfcapp.com.br/api_app/cinema_cartaz_filmes.php", function(data){ $("#id_conteudo_em_cartaz_filmes").html(data); });
-					}
-					
-				});
+				if(id_filme==null){ id_filme=""; }
 				
-				$("#bt_opcoes_em_cartaz_filme").click(function(){
+
+									
+				$.get("http://playfcapp.com.br/api_app/cinema_cartaz.2.php", { id_filme:id_filme }, function(data){ $("#id_conteudo_em_cartaz").html(data); });
+				
+				$("#bt_opcoes_em_cartaz").click(function(){
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				

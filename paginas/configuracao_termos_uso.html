@@ -58,15 +58,13 @@
 		
 			<script>
 				
-				$.get("http://playfc.projetotemporario.com.br/api_app/configuracao_termos_uso.php", function(data){ $("#id_conteudo_termos_uso").html(data); });
+				$.get("http://playfcapp.com.br/api_app/configuracao_termos_uso_cinema.php", function(data){ $("#id_conteudo_termos_uso").html(data); });
 				
 				$("#ficha_termos_uso_voltar").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				
 				$("#bt_opcoes_termos_uso").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				

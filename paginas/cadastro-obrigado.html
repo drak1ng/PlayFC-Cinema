@@ -41,35 +41,30 @@
 				    <div id="bt_opcoes_meus_dados3" style='width:50px; height:38px; float:right; margin:-5px 0px; background:url(../img/icon_preferencias.png) center center no-repeat;'></div>
 				    <div style="margin:0px 50px; text-align:center;"><img src="../img/logo2.png" alt="logo2" height="28" /></div>
 				</div>
-			    <div class="logotipo" id="cadastro_sucesso_logotipo"><img src="../img/logo2.png" alt="logo2" height="24" /></div>
 			    <div class="titulo_tela">CADASTRO!</div>
 		    </div>
 
 			<div role="main" class="ui-content">
 				<div id="id_conteudo_cadastro_sucesso" style="text-align:center; padding:80px 0px 50px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify;">
+					<div style="padding-top:120px; text-align:center; font-size:13px;">
+						<img src="../img/loading.gif" width="110" height="10" /><br><br>
+						Aguarde carregando...
+					</div>
 				</div>
 			</div>
 		
 			
 			<script>
 				
-				var x = '<br><br><h1><b>SUCESSO!<b></h1><p style="font-size:13px; text-align:center;">Cadastro realizado com sucesso!<br>Você já pode enviar seus gols para nós.</p><br><br><div id="bt_sucesso" style="background-color:#81B91D; text-align:center; border-radius:5px; font-size:18px; text-indent:0px; font-weight:bold; opacity:1; color:#FFF; padding:10px 0px; border:1px solid #3D8D12 !important; width:100%; margin-top:10px;">Enviar uma narração</div>';
+				var x = '<br><br><h1><b>SUCESSO!<b></h1><p style="font-size:13px; text-align:center;">Cadastro realizado com sucesso!<br>Você já pode continuar e comprar o seu ingresso.</p><br><br><div id="bt_sucesso" style="background-color:#81B91D; text-align:center; border-radius:5px; font-size:18px; text-indent:0px; font-weight:bold; opacity:1; color:#FFF; padding:10px 0px; border:1px solid #3D8D12 !important; width:100%; margin-top:10px;">Comprar Ingresso</div>';
 				
 				$('#id_conteudo_cadastro_sucesso').html(x);
 				
 				$("#bt_sucesso").click(function(){
-					var voltar_cadastro = window.localStorage.getItem('voltar_cadastro');
-					if(voltar_cadastro=='sim'){
-						$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
-						$.mobile.changePage("enviar_03.html", { transition: "fade", changeHash: false });
-					}else{
-						$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
-						$.mobile.changePage("enviar.html", { transition: "fade", changeHash: false });
-					}
+					$.mobile.changePage("comprar_ingresso.html", { transition: "fade", changeHash: false });
 				});
 				
 				$("#bt_opcoes_meus_dados3").click(function(){
-					$.mobile.loading("show", { text:"Carregando Informações", theme:"b", textVisible:true, textonly:false, html:"" });
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				

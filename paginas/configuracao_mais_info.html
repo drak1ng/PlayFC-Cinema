@@ -35,37 +35,36 @@
 		<script type="text/javascript" src="../js/cordova.js"></script>
 	</head>
     <body>
-	    <div data-role="page" style="background:#999;">
-		    <div class="topo" style="z-index:999;">
-			    <div class="logotipo" id="em_cartaz_filme_logotipo">
-				    <div id="bt_opcoes_em_cartaz_filme" style='width:50px; height:38px; float:right; margin:-5px 0px; background:url(../img/icon_preferencias.png) center center no-repeat;'></div>
+	    <div data-role="page" style="background:#FFF;">
+		    <div class="topo">
+			    <div class="logotipo" id="configuracao_logotipo">
+				    <div id="bt_opcoes_mais_info" style='width:50px; height:38px; float:right; margin:-5px 0px; background:url(../img/icon_preferencias.png) center center no-repeat;'></div>
 				    <div style="margin:0px 50px; text-align:center;"><img src="../img/logo2.png" alt="logo2" height="28" /></div>
 				</div>
-			    <div class="titulo_tela">EM CARTAZ</div>
+			    <div class="titulo_tela">
+				    <div class='bt_voltar' id='ficha_mais_info'>Voltar</div>
+					<div style='margin:0px 100px;'>INFORMAÇÕES</div>
+				</div>
 		    </div>
 
-			<div role="main" class="ui-content" style="height:100%;">
-				<div id="id_conteudo_em_cartaz_filmes" style="height:100%; text-align:center; padding:73px 0px 41px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify; margin:0px -16px;">
-					<div style="width:200px; height:66px; margin:120px auto 0px auto; text-align:center; font-size:13px; color:#999; background:#FFF; padding-top:30px; border-radius:10px;">
+			<div role="main" class="ui-content">
+				<div id="id_conteudo_mais_info" style="text-align:center; padding:80px 0px 0px 0px; color:#999; font-size:14px; text-transform:none; text-align:justify;">
+					<div style="padding-top:120px; text-align:center; font-size:13px;">
 						<img src="../img/loading.gif" width="110" height="10" /><br><br>
 						Aguarde carregando...
 					</div>
 				</div>
 			</div>
-			
+		
 			<script>
 				
-				$.get("http://playfcapp.com.br/api_app/cinema_cartaz_quantidade.php", function(data){
-					
-					if(data==1){
-						$.mobile.changePage("horarios.html", { transition: "none", changeHash: false });
-					}else{
-						$.get("http://playfcapp.com.br/api_app/cinema_cartaz_filmes.php", function(data){ $("#id_conteudo_em_cartaz_filmes").html(data); });
-					}
-					
+				$.get("http://playfcapp.com.br/api_app/configuracao_mais_info_cinema.php", function(data){ $("#id_conteudo_mais_info").html(data); });
+				
+				$("#ficha_mais_info").click(function(){
+					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				
-				$("#bt_opcoes_em_cartaz_filme").click(function(){
+				$("#bt_opcoes_mais_info").click(function(){
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				
@@ -74,3 +73,4 @@
 		</div>
     </body>
 </html>
+
