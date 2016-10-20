@@ -55,6 +55,7 @@
 			
 			<script>
 				
+<<<<<<< HEAD
 				$.get("http://playfcapp.com.br/api_app/cinema_cartaz_quantidade.php", function(data){
 					
 					if(data==1){
@@ -66,6 +67,11 @@
 				});
 				
 				$("#bt_opcoes_em_cartaz_filme").click(function(){
+=======
+				$.get("http://playfcapp.com.br/api_app/cinema_cartaz.php", function(data){ $("#id_conteudo_em_cartaz").html(data); });
+				
+				$("#bt_opcoes_em_cartaz").click(function(){
+>>>>>>> origin/master
 					$.mobile.changePage("configuracao.html", { transition: "fade", changeHash: false });
 				});
 				

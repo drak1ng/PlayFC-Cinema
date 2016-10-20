@@ -59,9 +59,13 @@
 			
 			<script>
 				
+<<<<<<< HEAD
 				var id_filme_sessao = window.localStorage.getItem('id_filme_sessao');
 				
 				$.get("http://playfcapp.com.br/api_app/cinema_ingresso.2.php", { id_filme_sessao:id_filme_sessao }, function(data){ $("#id_conteudo_comprar_ingresso").html(data); });
+=======
+				$.get("http://playfcapp.com.br/api_app/cinema_ingresso.php", function(data){ $("#id_conteudo_comprar_ingresso").html(data); });
+>>>>>>> origin/master
 				
 				$("#bt_comprar_ingresso").click(function(){
 					$.mobile.changePage("comprar_ingresso.html", { transition: "fade", changeHash: false });
